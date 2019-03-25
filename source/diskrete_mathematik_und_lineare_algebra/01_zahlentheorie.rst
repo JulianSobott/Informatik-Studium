@@ -1,5 +1,5 @@
 ================
-Teilbarkeit
+Zahlentheorie
 ================
 
 .. contents::

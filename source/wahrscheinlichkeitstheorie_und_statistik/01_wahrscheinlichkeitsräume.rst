@@ -1,6 +1,9 @@
-=============================
 Wahrscheinlichkeitsräume
 =============================
+
+.. contents::
+    :local:
+
 
 Definition 1: Wahrscheinlichkeitsraum
 **************************************
