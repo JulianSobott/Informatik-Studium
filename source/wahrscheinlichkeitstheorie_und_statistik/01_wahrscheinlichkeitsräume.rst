@@ -48,7 +48,7 @@ Statistik über die Häufigkeit von Ereignis E.
 
 :def:`Relative Häufigkeit (E)` :math:`=\frac{absolute Häufigkeit (E)}{Anzahl Messungen}`
 
-Relative Häufigkeiten gelten als Erwartungen für die Zukunft und können als :def:`Wahrscheinlichkeiten` (en:
+Relative Häufigkeiten gelten als Erwartungen für die Zukunft und können als :def:`Wahrscheinlichkeiten` (Wk., en:
 *propability*) betrachtet werden.
 
 Für die Wahrscheinlichkeit eines Ereignisses E, werden die Wahrscheinlichkeiten der Elementarereignissen in E
@@ -113,6 +113,43 @@ Beispiele:
 
     :math:`Pr[E]=\frac{3}{10}+\frac{1}{10}=\frac{4}{10}=\frac{2}{5}`
 
+Beispiel: Nachweis für Wk.-Raum
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Signalübertragung über Kanal. Erfolgreiche Übertragung mit Wk. `p`. Mit welcher Wk. braucht man `k` Versuche bis zu
+einer erfolgreichen Übertragung?
+
+Definiere Elementarereignisse:
+
+:math:`\omega_i =` erfolgreiche Übertragung erstmals beim `i`-ten Versuch
+
+:math:`\Omega =\{\omega_1,\omega_2,\omega_3,...\}`
+
+Übertragung schlägt fehl mit Wk. :math:`q=1-p`.
+
+.. figure:: assets/baumdiagramm_02.png
+    :alt: Baumdiagramm: zur Signalübertragung
+
+    Baumdiagramm: zur Signalübertragung
+
+:math:`Pr[\omega_i]=q^{i-1}*p`
+
+:math:`\sum_{i=1}^\infty Pr[\omega_i]=\sum_{i=1}^\infty q^{i-1}p=p*\sum_{i=0}^\infty
+q^i=p*\frac{1}{1-q}=p*\frac{1}{p}=1`
+
+:math:`\Rightarrow` Wk.-Raum
+
+**Bsp.**
+
+Ereignis :math:`A_k=` Erfolg in weniger gleich `k` Versuchen :math:`=\{\omega_1,\omega_2,...,\omega_k\}`
+
+:math:`Pr[A_k]=\sum_{i=1}^k Pr[\omega_i]=\sum_{i=1}^k q^{i-1}p=p*\sum_{i=0}^{k-1}q^i=p*\frac{1-q^k}{1-q}=1-q^k=1-
+(1-p)^k`
+
+*Anmerkung:* :math:`q^k` geht exponentiell gegen :math:`0`.
+Also geht :math:`1-(1-p)^k` exponentiell gegen :math:`1`.
+
+
 Eigenschaften
 **************
 
@@ -147,9 +184,102 @@ Seien :math:`A,B\in\Omega` Ereignisse.
             \begin{align*}
             \vert A\cup B\vert &= \vert A\vert + \vert B\vert -\vert A\cap B\vert\\
 
-            \vert A\cup B \cup B\vert &= \vert A\vert + \vert B\vert +\vert C\vert  -(\vert A\cap B\vert +
-            \vert A\cap C\vert + \vert B\cap C\vert) + \vert A\cap B \cap C\vert
+            \vert A\cup B \cup C\vert &= \vert A\vert + \vert B\vert +\vert C\vert  -(\vert A\cap B\vert +
+            \vert A\cap C\vert + \vert B\cap C\vert) + \vert A\cap B \cap C\vert\\\\
+
+            \vert A_1\cup A_2 \cup ... \cup A_n\vert &= \\
+            = \sum_{i=1}^n \vert A_i \vert - \sum_{1\le i < j \le n} \vert &
+            A_i \cap A_j \vert + \sum_{1\le i<j<k \le n} \vert A_i \cap A_j \cap A_k \vert -+... + (-1)^{n+1}\vert
+            A_1 \cap ... \cap A_n \vert
             \end{align*}
+
+Beweis: Allgemeine Siebformel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Sei :math:`a\in A_1 \cup A_2 \cup ... \cup A_n` beliebig.
+
+Zeige: `a` wird durch die Formel auf der rechten Seite genau einmal gezählt.
+
+Komme `a` in `m` der Mengen :math:`A_1, A_2,..., A_n` vor. (:math:`1\le m \le n`)
+    - `a` wird in :math:`S_1` m-mal gezählt
+    -   :math:`\;\;\;` \- " - :math:`\;\;\;\;S_2 \;\;{m \choose 2}`-mal gezählt (=Anzahl Paare aus m Elementen)
+    -   :math:`\;\;\;` \- " - :math:`\;\;\;\;S_k \;\;{m \choose k}`-mal gezählt
+    -   :math:`\;\;\;` \- " - :math:`\;\;\;\;S_m \;{m \choose m}`-mal gezählt
+    -   :math:`\;\;\;` \- " - :math:`\;\;\;\;S_n \;\;\;\; 0`-mal gezählt
+
+:math:`\Rightarrow a` wird :math:`{m \choose 1} - {m \choose 2} + {m \choose 3}-+...+(-1)^{m+1}{m \choose m}` - mal
+gezählt.
+
+..
+
+    Binomialtheorem: :math:`(x+y)^n=\sum_{k=0}^n{n \choose k}x^k y^{n-k}`
+
+Setze  :math:`x=-1, \; y=1 ,\; n\ge 1`
+
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    (-1+1)^n=0=\sum_{k=0}^n {n \choose k}(-1)^k={n \choose 0}-{n \choose 1}+{n \choose 2}-...+(-1)^n{n \choose n}\\
+    \Leftrightarrow {n \choose 1}-{n \choose 2}+{n \choose 3}-...+(-1)(-1)^n{n \choose n} = 1
+
+    \end{gather*}
+
+:math:`\Rightarrow a` wird 1-mal gezählt. (`n` wird durch `m` ersetzt und :math:`(-1)(-1)^n = (-1)^{m+1}`)
+
+Folgerung:
+***********
+
+.. math::
+    :nowrap:
+
+    \begin{gather*}
+    Pr[A_1\cup A_2 \cup ... \cup A_n] = \\
+    \sum_{i=1}^n Pr[A_i] - \sum_{1\le i < j \le n} Pr[
+    A_i \cap A_j] + \sum_{1\le i<j<k \le n} Pr[ A_i \cap A_j \cap A_k] -+... + (-1)^{n+1}Pr[
+    A_1 \cap ... \cap A_n]
+    \end{gather*}
+
+
+Beispiel:
+^^^^^^^^^^^^^^
+
+`n` Seeleute kehren betrunken auf ihr Schiff zurück. Jeder fällt zufällig in eine Koje. Mit welcher Wk. liegt keiner
+in seiner eigenen Koje? (Komplementär: Min. ein Seemann liegt in seiner Koje)
+
+Seemann `i` gehört Koje `i`, :math:`i=1,2,...,n`. Jede Verteilung der Seeleute auf die Kojen ist eine Permutation
+:math:`\pi \in S_n`, d.h. :math:`\pi:[n] \rightarrow [n]`.
+
+Ereignis :math:`A_i=` Seemann `i` liegt in seiner Koje `i`, d.h. :math:`A_i=\{\pi\in S_n \mid \pi (i)=i\}`
+
+:math:`\vert S_n \vert = n!`
+
+:math:`\vert A_i \vert = (n-1)!`, da `n-1` Seeleute beliebig auf `n-1` Kojen verteilt werden.
+
+:math:`Pr[\pi]=\frac{1}{\vert S_n\vert}=\frac{1}{n!}` (Laplace-prinzip)
+
+:math:`Pr[A_i]=\frac{\vert A_i\vert}{\vert S_n\vert}=\frac{(n-1)!}{n!}=\frac{1}{n}`
+
+:math:`A=A_1\cup A_2\cup ... \cup A_n =` min ein Seemann liegt in der richtigen Koje.
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    i<j: \;\;\vert A_i \cap A_j\vert &= (n-2)! \\
+    i<j<k: \;\;\vert A_i \cap A_j \cap A_k\vert &= (n-3)! \\
+    ...\\
+    \vert A_1 \cap A_2\cap ... \cap A_n\vert &= (n-n)!=0!=1 \\
+
+    \Rightarrow \vert A_1\cup A_2\cup ... \cup A_n \vert &= \sum_{i=1}^n \vert A_i \vert - \sum_{1\le i < j \le n} \vert
+    A_i \cap A_j \vert + \sum_{1\le i<j<k \le n} \vert A_i \cap A_j \cap A_k \vert -+... + (-1)^{n+1}\vert
+    A_1 \cap ... \cap A_n \vert\\
+    &= \sum_{k=1}^n (-1)^{k+1} {n \choose k}(n-k)!
+    \end{align*}
+
+
+
 
 
 
