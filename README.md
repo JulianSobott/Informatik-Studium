@@ -3,7 +3,10 @@ A collection of math and informatic scripts.
 
 All content is written in German!
 
+**Documentation is available on:**
 
+https://informatik-studium.readthedocs.io/de/latest/
+ 
 Styleguide
 --------------
 
@@ -12,3 +15,5 @@ Styleguide
 - ==: Kapitel Titel
 - \*\*: Definitionen, Folgerung, Theorem, Lemma
 - ^^: Beispiel, Spezialfälle
+
+
