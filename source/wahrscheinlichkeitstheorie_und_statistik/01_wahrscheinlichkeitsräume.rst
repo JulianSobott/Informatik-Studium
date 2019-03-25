@@ -104,9 +104,10 @@ Beispiele:
 
     :math:`\Omega=\{r,s\}^2`  , :math:`\vert\Omega\vert = 4`
 
-    .. todo::
+    .. figure:: assets/baumdiagramm_01.png
+        :alt: Baumdiagramm: 5 Bälle, 2 rot (r) und 3 schwarz (s), 2 mal ziehen ohne Zurücklegen
 
-        Baumdiagramm Bild einfügen
+        Baumdiagramm: 5 Bälle, 2 rot (r) und 3 schwarz (s), 2 mal ziehen ohne Zurücklegen
 
     E = 2. Kugel ist rot :math:`=\{sr, rr\}`
 
