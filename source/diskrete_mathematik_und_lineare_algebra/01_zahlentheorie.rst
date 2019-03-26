@@ -282,3 +282,44 @@ i       :math:`n_i`     Berechnung: :math:`m_i`         :math:`m_i`
 :math:`\Rightarrow ggT(233408, 344512)=448`
 
 :math:`\Rightarrow \frac{233408}{344512} = \frac{\frac{233408}{448}}{\frac{344512}{448}} = \frac{512}{729}`
+
+Theorem 2:
+*************
+
+Es gibt :math:`a,b\in\gz`, so dass :math:`a*m+b*n=ggT(m,n)`.
+
+Beweis:
+^^^^^^^^
+
+.. todo::
+
+    Beweis
+
+Erweiterter Euklidischer Algorithmus
+*************************************
+
+.. code-block:: none
+
+    EuklidErweitert(m,n)
+        if m = 0 then
+            return (n, 0, 1)
+        else
+            (d, b', a') <- EuklidErweitert(n mod m, m)
+            a <- a' - b'(n div m)
+            b <- b'
+            return (d, a, b)
+
+Beispiel:
+^^^^^^^^^^
+
+Namen der Variablen sind anders: a=n, b=m, b=s, a=t
+
+
+.. figure:: assets/extended_euclid_table.PNG
+    :alt: Erweiterter Euklidischer Algorithmus Schema für 99 und 78
+
+    Erweiterter Euklidischer Algorithmus Schema für 99 und 78
+
+:math:`ggT(99, 78)=99*(-11)+78*14=3`
+
+

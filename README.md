@@ -15,5 +15,3 @@ Styleguide
 - ==: Kapitel Titel
 - \*\*: Definitionen, Folgerung, Theorem, Lemma
 - ^^: Beispiel, Spezialfälle
-
-
