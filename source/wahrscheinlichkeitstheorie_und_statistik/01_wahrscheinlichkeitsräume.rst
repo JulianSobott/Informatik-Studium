@@ -275,12 +275,20 @@ Ereignis :math:`A_i=` Seemann `i` liegt in seiner Koje `i`, d.h. :math:`A_i=\{\p
     \Rightarrow \vert A_1\cup A_2\cup ... \cup A_n \vert &= \sum_{i=1}^n \vert A_i \vert - \sum_{1\le i < j \le n} \vert
     A_i \cap A_j \vert + \sum_{1\le i<j<k \le n} \vert A_i \cap A_j \cap A_k \vert -+... + (-1)^{n+1}\vert
     A_1 \cap ... \cap A_n \vert\\
-    &= \sum_{k=1}^n (-1)^{k+1} {n \choose k}(n-k)!
+    &= \sum_{k=1}^n (-1)^{k+1} {n \choose k}(n-k)!\\
+    &= \sum_{k=1}^n (-1)^{k+1} \frac{n!}{k!(n-k)!} * (n-k)!\\
+    &= n!*\sum_{k=1}^n \frac{(-1)^{k+1}}{k!}\\
+    \Rightarrow Pr[A]&=\frac{\vert A\vert}{\vert S_n\vert}=\frac{n!*\sum_{k=1}^n \frac{(-1)^{k+1}}{k!}}{n!}=
+    \sum_{k=1}^n \frac{(-1)^{k+1}}{k!}\\
+
+    Pr[\bar A]&=1-Pr[A]=1-\sum_{k=1}^n \frac{(-1)^{k+1}}{k!}=\sum_{k=0}^n \frac{(-1)^{k}}{k!}
+    \xrightarrow{n\to\infty}\frac{1}{e} \approx 0.36788
+
     \end{align*}
 
+**Hinweis:** :math:`\sum_{0}^\infty \frac{1}{k!}=e` und  :math:`\sum_{0}^\infty \frac{x^k}{k!}=e^x`
 
-
-
+:math:`Pr[\bar A]` ist die Wk., dass keiner in seiner Koje liegt.
 
 
 .. rubric:: Fußnoten
