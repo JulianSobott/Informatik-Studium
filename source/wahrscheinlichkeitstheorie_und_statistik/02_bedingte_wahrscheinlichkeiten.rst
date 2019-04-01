@@ -111,8 +111,8 @@ Nach :ref:`02_multiplikationssatz`:
 
     \begin{align*}
     Pr[A]&=1*\frac{n-1}{n}*\frac{n-2}{n}*...*\frac{n-(m-1)}{n}\\
-    &=\prod_{j=1}^m\frac{n-(j-1)}{n} = \prod_{j=1}^m (1-\frac{j-1}{n} \le \prod_{j=1}^m e^{-\frac{j-1}{n}} \le\\
-    &\le e^{-\frac{1}{n}* \sum_{j=1}^m (j-1)} = e^{-\frac{1}{n}* \sum_{j=0}^{m-1} (j)} = e^{-\frac{(m-1)m}{2n}}\\
+    &=\prod_{j=1}^m\frac{n-(j-1)}{n} = \prod_{j=1}^m (1-\frac{j-1}{n}) \le \prod_{j=1}^m e^{-\frac{j-1}{n}} =\\
+    &= e^{-\frac{1}{n}* \sum_{j=1}^m (j-1)} = e^{-\frac{1}{n}* \sum_{j=0}^{m-1} (j)} = e^{-\frac{(m-1)m}{2n}}\\
 
     \end{align*}
 
@@ -121,3 +121,114 @@ Nach :ref:`02_multiplikationssatz`:
     Check formula end
 
 **Hinweis:** :math:`1-x\le e^{-x}`
+
+
+Satz: Totale Wahrscheinlichkeit
+**********************************
+
+Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` paarweise disjunkt [#paarweisedisjunkt]_. Sei :math:`B \subseteq
+\Omega` mit :math:`B \subseteq A_1 \cup A_2\cup ...\cup A_n`, dann gilt:
+
+.. math:: Pr[B]=\sum_{i=1}^n Pr[B \mid A_i]*Pr[A_i]
+
+Beweis:
+^^^^^^^^^^
+
+:math:`B=(B\cap A_1)\cup (B\cap A_2) \cup ... \cup (B\cap A_n)`
+
+:math:`\Rightarrow Pr[B]= \sum_{i=1}^n Pr[B \cap A_i] = \sum_{i=1}^n Pr[B \mid A_i]*Pr[A_i]`, da :math:`B\cap A_i`
+paarweise disjunkt sind mit :math:`i=1,...,n`.
+
+**Hinweis**: :math:`Pr[A \mid B] = \frac{Pr[A\cap B]}{Pr[B]} \Leftrightarrow Pr[A\cap B] = Pr[A | B] * Pr[B]`
+
+
+Satz von Bayes:
+****************
+
+Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` paarweise disjunkt [#paarweisedisjunkt]_,
+:math:`B \subseteq A_1 \cup A_2\cup ...\cup A_n` und :math:`Pr[B]>0`, dann gilt:
+
+.. math:: Pr[A_i|B]=\frac{\Pr[A_i\cap B]}{Pr[B]}=\frac{Pr[B|A_i]*Pr[A_i]}{\sum_{i=1}^n Pr[B \cap A_i]*Pr[A_j]}
+
+
+**Hinweise:** Dadurch wird es möglich aus :math:`Pr[A|B]`, :math:`Pr[B|A]` zu berechnen. Dies is möglich, da das UND
+kommutativ ist.
+
+Beispiel: Datenübertragung über Kanal mit Fehlern (noisy)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Übertragen wird Bit 0 oder 1.
+
+Ereignisse: für :math:`i=0,1`
+
+:math:`S_i=` Bit `i` wird gesendet.
+
+:math:`R_i=` Bit `i` wird empfangen.
+
+Es gelte: :math:`Pr[S_0]=0,3 \;\;, Pr[S_1]=0,7`
+
+    Fehler: :math:`Pr[R_1|S_0]=0,3 \;\;, Pr[R_0|S_1]=0,1`
+
+Frage: Wk. für Übertragungsfehler?
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    Pr[Ü-Fehler]&=Pr[(S_1\cap R_0) \cup (S_0 \cap R_1)]\\
+    &= Pr[S_1\cap R_0] + Pr[S_1\cap R_1]\\
+    &= Pr[R_0|S_1]*Pr[S_1]+Pr[R_1|S_0]*Pr[S_0]\\
+    &= 0,1 * 0,7+0,3*0,3 = 0,16\\
+    \end{align*}
+
+Andere WK.'s:
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    Pr[R_1] &= Pr[R_1|S_0]*Pr[S_0]+Pr[R_1|S_1]*Pr[S_1] & NR: Pr[R_1|S_1] = 1-Pr[R_0\mid S_1]\\
+    &= 0,3*0,3+0,9*0,7=0,72\\
+    Analog: Pr[R_0]&=0,28 \;\;oder\;\; 1 - 0,72 = 0,28\\
+    Pr[S_1 \mid R_1]&=\frac{Pr[R_1\mid S_1]*Pr[S_1]}{Pr[R_1]}=\frac{0,9*0,7}{0,72}=0,875\\
+    Analog: Pr[S_0\mid R_0]&=0,75
+    \end{align*}
+
+
+Beispiel: 3 Münzen
+^^^^^^^^^^^^^^^^^^^^
+
+Gegeben sind 3 Münzen von denen 2 fair sind und eine gefälscht ist. Für die Gefälschte gilt: :math:`Pr[K]=\frac{2}{3}`.
+
+Wähle die Reihenfolge und werfe jede zufällig.
+
+:math:`E_i=` Münze `i` ist gefälscht, :math:`i=1,2,3`
+
+:math:`Pr[E_i]=\frac{1}{3}`, :math:`\Omega=\{K,Z\}^3`
+
+Ergebnis sei:
+                === === ===
+                 1   2   3
+                === === ===
+                 K   K   Z
+                === === ===
+
+Frage: Wie groß ist die Wk., dass Münze 1 die gefälschte Münze ist?
+
+:math:`B=\{(K,K,Z)\}`
+
+:math:`Pr[E_1\mid B] = ?`
+
+:math:`Pr[B\mid E_1] = \frac{2}{3}*\frac{1}{2}*\frac{1}{2}=\frac{1}{6}`
+
+:math:`Pr[B\mid E_2] = \frac{1}{2}*\frac{2}{3}*\frac{1}{2}=\frac{1}{6}`
+
+:math:`Pr[B\mid E_3] = \frac{1}{2}*\frac{1}{2}*\frac{1}{3}=\frac{1}{12}`
+
+:math:`Pr[E_1\mid B]=\frac{Pr[B\mid E_1]*Pr[E_1]}{\sum_{i=1}^3 Pr[B\mid E_i]*Pr[E_i]} = \frac{2}{5}`
+
+
+
+.. rubric:: Fußnoten
+
+.. [#paarweisedisjunkt] Werden zwi beliebige Mengen geschnitten, ist der Schnitt immer leer
