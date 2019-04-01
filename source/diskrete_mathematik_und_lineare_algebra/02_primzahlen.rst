@@ -6,16 +6,19 @@
 Primzahlen
 ================
 
+.. contents::
+    :local:
+
 Definition: Primzahl
 **********************
 
-:math:`p\in\mathbb{N} heißt Primzahl, wenn `p` genau 2 Teiler besitzt. Jede natürliche Zahl `n` hat mindestens die
+:math:`p\in\mathbb{N}` heißt Primzahl, wenn `p` genau 2 Teiler besitzt. Jede natürliche Zahl `n` hat mindestens die
 trivialen Teiler 1 und `n`.
 
-*Hinweis:* Die kleinste Zahl, die die Definition erfüllt, ist die 2.
+**Hinweis:** Die kleinste Zahl, die die Definition erfüllt, ist die 2.
 
-Bsp.
-^^^^^
+Beispiel: Primzahlen
+^^^^^^^^^^^^^^^^^^^^^
 
 2, 3, 5, 7, 11, 13, ...
 
@@ -101,7 +104,7 @@ Beispiele:
 Theorem 3:
 ***********
 
-Für :math`n\ge 1` gilt: Die Darstelung von :math`n=p_0*p_1*...*p_n` mit Primzahlen :math`p_i` und :math`p_0\le p_1
+Für :math:`n\ge 1` gilt: Die Darstellung von :math:`n=p_0*p_1*...*p_n` mit Primzahlen :math:`p_i` und :math:`p_0\le p_1
 \le ... \le p_n` ist eindeutig.
 
 Beweis:
