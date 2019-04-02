@@ -51,7 +51,7 @@ Sieb des Eratosthenes
 
 Algorithmus um herauszufinden, ob eine Zahl `n` eine Primzahl ist. Ist die Zahl keine Primzahl wird ein Teiler
 zurückgegeben ansonsten 0. Der Algorithmus kann auch genommen werden um Primzahlen zu finden, wenn man anstatt eine
-Zahl zurückgibt, den prim Array nimmt und schaut wo nch Ende des Durchlaufs noch true drin steht.
+Zahl zurückgibt, den prim Array nimmt und schaut wo nach Ende des Durchlaufs noch true drin steht.
 
 .. code-block:: none
 
@@ -114,3 +114,95 @@ Beweis:
 
     Beweis
 
+Folgerung 5:
+*************
+
+Es gibt unendlich viele Primzahlen.
+
+Beweis:
+^^^^^^^^^^^^^^
+
+.. todo::
+
+    Beweis
+
+Theorem 4: Primzahlsatz der Zahlentheorie
+*******************************************
+
+Sei :math:`\pi (n) := \{p \le n : n\, ist\, prim\}`, dann gilt: :math:`\pi (n)~\frac{n}{log(n)}`
+
+Folgerung 6:
+****************
+
+Die Primfaktorzerlegung des ggT zweier Zahlen :math:`a,b\ne 0` enthält genau die Faktoren der Primfaktorzerlegung von
+`a` und `b`, die in beiden enthalten sind.
+
+Beweis:
+^^^^^^^^^^^^^^
+
+.. todo::
+
+    Beweis
+
+Beispiel:
+^^^^^^^^^^^^^^
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    a&=12=2*2*3\\
+    b&=18=2*3*3\\
+    ggT(12,18)&=6=2*3
+    \end{align*}
+
+Folgerung 7:
+*************
+
+Das kgV zweier Zahlen :math:`a,b>0` kann mit :math:`\frac{a*b}{ggT(a,b)}` berechnet werden.
+
+Beweis:
+^^^^^^^^^^^^^^
+
+.. todo::
+
+    Beweis
+
+Beispiel:
+^^^^^^^^^^
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    a&=12=2*2*3\\
+    b&=18=2*3*3\\
+    ggT(12,18)&=6=2*3\\
+    kgV(12,18)&=\frac{a*b}{ggT(a,b)}=\frac{2*2*3*2*3*3}{2*3}=2*2*3*3=36
+    \end{align*}
+
+
+Definition 8: Teilerfremd
+**************************
+
+Die Zahlen :math:`a,b\in \mathbb{Z}` heißen :def:`Teilerfremd`, wenn :math:`ggT(a,b)=1`. Schreibweise: :math:`a\perp b`
+
+Beispiel:
+^^^^^^^^^^
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    a&=2,            &b&=3\\
+    T_2&=\{1,2\},    &T_3&=\{1,3\}\\
+    ggT(2,3)&=1\\
+    &\Rightarrow a\perp b\\
+    \end{align*}
+
+Beobachtung:
+^^^^^^^^^^^^
+
+- :math:`a\perp b \Rightarrow` `a` und `b` haben keine gemeinsamen Primfaktoren > 1
+- :math:`a\perp b` und :math:`a\perp c \Leftrightarrow a \perp b*c`
+- `p` is prim  :math:`\cap \;p\mid (a*b) \Rightarrow p\mid a \;\cup\; p\mid b`
