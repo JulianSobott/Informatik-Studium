@@ -228,6 +228,52 @@ Frage: Wie groß ist die Wk., dass Münze 1 die gefälschte Münze ist?
 :math:`Pr[E_1\mid B]=\frac{Pr[B\mid E_1]*Pr[E_1]}{\sum_{i=1}^3 Pr[B\mid E_i]*Pr[E_i]} = \frac{2}{5}`
 
 
+Definition: Unabhängigkeit
+****************************
+
+`A` und `B` sind :def:`voneinander unabhängig`, falls das Zutreffen von Ereignis `B`, die Wk. von `A` nicht ändert.
+D.h. es gilt: :math:`Pr[A\mid B] = Pr[A]` Folglich: :math:`\frac{Pr[A\cap B}{Pr[B]}=Pr[A]`
+
+.. math:: \Rightarrow Pr[A\cap B]=Pr[A]*Pr[B]
+
+Ist :math:`Pr[A]>0`, dann folgt :math:`Pr[B]=\frac{Pr[A\cap B]}{Pr[A]}=Pr[B\mid A]`
+
+
+Beispiel: 2 Würfel, geordnet
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A = 1. Würfel ist gerade
+
+B = 2. Würfel ist gerade
+
+C = Summe ist 7
+
+:math:`\Omega = [6]^2`
+
+Definiere: :math:`G=\{2,4,6\}`
+
+:math:`A=G\times [6]`, :math:`\vert A\vert=3*6=18`, :math:`Pr[A]=\frac{18}{36}=\frac{1}{2}`
+
+:math:`B=[6]\times G`, :math:`\vert B\vert=6*3=18`, :math:`Pr[A]=\frac{18}{36}=\frac{1}{2}`
+
+:math:`C=\{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)\}`, :math:`Pr[C]=\frac{1}{6}`
+
+:math:`Pr[A\cap B]=Pr[G\times G]=\frac{9}{36}=\frac{1}{4}=Pr[A]*Pr[B]\Rightarrow` `A` und `B` sind unabhängig.
+
+:math:`Pr[A\cap C]=Pr[\{(2,5), (4,3), (6,1)\}]=\frac{3}{36}=\frac{1}{12}=Pr[A]*Pr[C]\Rightarrow` `A` und `C` sind
+unabhängig. Analog: :math:`B\cap C \Rightarrow` A/B sind unabhängig von C.
+
+:math:`Pr[A\cap B \cap C]=Pr[\emptyset]=0\ne Pr[A]*Pr[B]*Pr[C]\Rightarrow` Nicht alle drei sind unabhängig.
+
+Definition: Unabhängigkeit von n Ereignissen
+*********************************************
+
+:math:`A_1,A_2,...,A_n` heißen :def:`unabhängig`, falls:
+
+.. math:: \forall I \subseteq [n] : Pr[\bigcap_{i\in I}A_i]=\prod_{i\in I}Pr[A_i]
+
+**Erklärung:** Alle möglichen Kombinationen werden betrachtet und müssen unabhängig sein.
+
 
 .. rubric:: Fußnoten
 
