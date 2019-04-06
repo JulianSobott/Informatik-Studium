@@ -43,3 +43,42 @@ Theorem 5:
 **********
 
 Sei :math:`a,b \in \mathbb{Z}`, dann gilt für :math:`m\ge 1`: :math:`a\equiv_m b \Leftrightarrow m\mid(a-b)`
+
+.. todo::
+
+    Beweis
+
+Beispiel:
+^^^^^^^^^^
+
+:math:`a=22`, :math:`b=7`
+
+:math:`7\equiv_m 22`
+
+:math:`a-b=22-7=15 \Rightarrow 5\mid 15`
+
+
+Folgerung 8:
+*************
+
+:math:`a\equiv_m b \Leftrightarrow a-b \equiv_m 0`
+
+
+Lemma 3:
+***********
+
+Sei :math:`a\equiv_m b` und :math:`c\equiv_m d`, dann gilt:
+
+1. :math:`a+c \equiv_m b+d`
+2. :math:`a-c \equiv_m b-d`
+3. :math:`a*c \equiv_m b*d`
+
+**Hinweis:** Dies gilt insbesondere auch wenn :math:`c=d`. D.h. ähnlich wie bei Gleichungen können beide Seiten der
+Kongruenz gleichmäßig erhöht, verringert oder multipliziert werden. Vorsicht: für die Division gilt dies nicht!
+
+Weiterhin gelten obige Regeln auch für z.B. :math:`c=m` und :math:`d=0`. D.h. der Modul kann zu einer Seite der
+Kongruenz addiert, subtrahiert oder multipliziert werden, ohne die andere Seite zu verändern.
+
+.. todo::
+
+    Beweis
