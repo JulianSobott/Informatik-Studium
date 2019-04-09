@@ -274,7 +274,41 @@ Definition: Unabhängigkeit von n Ereignissen
 
 **Erklärung:** Alle möglichen Kombinationen werden betrachtet und müssen unabhängig sein.
 
+Satz:
+*******
+
+Sind `A` und `B` unabhängig, dann sind auch unabhängig:
+    - :math:`\bar A` und :math:`B`
+    - :math:`A` und :math:`\bar B`
+    - :math:`\bar A` und :math:`\bar B`
+
+Beweis: zu :math:`\bar A,\; B`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:math:`\bar A \cap B = B-A=B-(A\cap B) \Rightarrow (\bar A \cap B)\cup (A\cap B) = B` [#disjunktindef]_
+
+:math:`\Rightarrow Pr[(\bar A \cap B)\cup (A\cap B)] = Pr[\bar A \cap B] + Pr[A\cap B] = Pr[\bar A\cap B] +
+Pr[A]*Pr[B] =Pr[B]`
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    Pr[\bar A \cap B] &= Pr[B]-Pr[A]*Pr[B]\\
+    &= (1-Pr[A])*Pr[B]
+    &= Pr[\bar A]*Pr[B]
+    \end{align*}
+
+Analog für :math:`A,\; \bar B`. Damit folgt auch, dass :math:`\bar A` und :math:`\bar B` unabhängig sind.
+
+Beweis: für :math:`\bar A \cap \bar B`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A, B unabhängig :math:`\Rightarrow \bar A,\; B` unabhängig. Def: :math:`\bar A = C`. :math:`\Rightarrow C,\;
+\bar B` unabhängig :math:`\Rightarrow \bar A,\; \bar B` unabhängig.
+
 
 .. rubric:: Fußnoten
 
 .. [#paarweisedisjunkt] Werden zwi beliebige Mengen geschnitten, ist der Schnitt immer leer
+.. [#disjunktindef] :math:`\bar A\cap B ` und :math:`A \cap B` sind disjunkt
