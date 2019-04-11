@@ -21,7 +21,7 @@ Definition 1: Teiler
 
 
 Für zwi Zahlen :math:`m, n \in \gz` mit :math:`m>0` ist m Teiler n, falls es ein :math:`t\in \gz` gibt, so dass
-:math:`n=t*m`. Kurzschreibweise: :math`m\mid n`
+:math:`n=t*m`. Kurzschreibweise: :math:`m\mid n`
 
 Beispiel 1:
 ^^^^^^^^^^^^^^^^
@@ -119,7 +119,7 @@ Formal:
 
 .. math::
 
-    ggT(m,n)=\{k\in \mathbb{N} : k>0 \cap k\mid m \cap k\mid n\}
+    ggT(m,n)=max(\{k\in \mathbb{N} : k>0 \cap k\mid m \cap k\mid n\})
 
 
 .. _01_01_def_06:

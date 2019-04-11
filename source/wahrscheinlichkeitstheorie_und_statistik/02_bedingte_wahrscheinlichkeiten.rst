@@ -301,12 +301,50 @@ Pr[A]*Pr[B] =Pr[B]`
 
 Analog für :math:`A,\; \bar B`. Damit folgt auch, dass :math:`\bar A` und :math:`\bar B` unabhängig sind.
 
-Beweis: für :math:`\bar A \cap \bar B`
+Beweis: für :math:`\bar A, \bar B`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A, B unabhängig :math:`\Rightarrow \bar A,\; B` unabhängig. Def: :math:`\bar A = C`. :math:`\Rightarrow C,\;
 \bar B` unabhängig :math:`\Rightarrow \bar A,\; \bar B` unabhängig.
 
+**Def:**
+
+Für :math:`A\subseteq \Omega`, :math:`A^1=A` und :math:`A^0=\bar A`
+
+Satz:
+********
+
+Seien :math:`A_1, A_2, ...,A_n \subseteq \Omega`, dann gilt:
+
+:math:`A_1,A_2,...,A_n` sind unabhängig :math:`Rightarrow`
+
+:math:`\forall s_1,s_2,...,s_n\in \{0,1\} Pr[A_1^{s_1} \cap A_2^{s_2} \cap,...,A_n^{s_n}]=Pr[A_1^{s_1}]*
+Pr[A_2^{s_2}]* Pr[A_2^{s_2}]*...*Pr[A_n^{s_n}]`
+
+.. todo::
+
+    Beweis
+
+Folgerungen:
+*************
+
+A, B unabhängig:
+
+:math:`\Leftrightarrow \bar A, B` unabh.
+
+:math:`\Leftrightarrow A, \bar B` unabh.
+
+:math:`\Leftrightarrow \bar A, \bar B` unabh.
+
+A, B, C unabh. :math:`\Rightarrow A\cap B, C` unabh. und :math:`A\cup B, C` unabh.
+
+.. todo::
+
+    Beweise
+
+.. todo::
+
+    Beispiele + Anwendungen
 
 .. rubric:: Fußnoten
 
