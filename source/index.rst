@@ -12,3 +12,10 @@ Informatik-Studium
 
    diskrete_mathematik_und_lineare_algebra/index
    wahrscheinlichkeitstheorie_und_statistik/index
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+
+    \end{align*}
