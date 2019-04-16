@@ -12,6 +12,7 @@ Informatik-Studium
 
    diskrete_mathematik_und_lineare_algebra/index
    wahrscheinlichkeitstheorie_und_statistik/index
+   einführung_in_die_it_sicherheit/index
 
 .. math::
     :nowrap:
