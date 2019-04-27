@@ -153,7 +153,7 @@ Also geht :math:`1-(1-p)^k` exponentiell gegen :math:`1`.
 Eigenschaften
 **************
 
-Seien :math:`A,B\in\Omega` Ereignisse.
+Seien :math:`A,B \subseteq \Omega` Ereignisse.
 
 1. :math:`Pr[\emptyset]=0`, (da :math:`0\le Pr[\emptyset]\le 1-Pr[\Omega]=0`) und :math:`Pr[\Omega]=1` (nach Definition)
 2. :math:`Pr[\bar A]=1-Pr[A]`
@@ -172,7 +172,7 @@ Seien :math:`A,B\in\Omega` Ereignisse.
 
         Allgemeiner für :math:`A_1, A_2, ...` paarweise disjunkt gilt:
 
-        .. math:: Pr[\bigcup_{i\ge 1}A_i]=\sum_{\omega\in A}Pr[A_i]
+        .. math:: Pr[\bigcup_{i\ge 1}A_i]=\sum_{i\ge 1}Pr[A_i]
 
 5. :math:`Pr[A \cup B]=Pr[A]+Pr[B]-Pr[A \cap B]`
 
@@ -289,6 +289,46 @@ Ereignis :math:`A_i=` Seemann `i` liegt in seiner Koje `i`, d.h. :math:`A_i=\{\p
 **Hinweis:** :math:`\sum_{0}^\infty \frac{1}{k!}=e` und  :math:`\sum_{0}^\infty \frac{x^k}{k!}=e^x`
 
 :math:`Pr[\bar A]` ist die Wk., dass keiner in seiner Koje liegt.
+
+Zusammenfassung: Wahrscheinlichkeitsräume
+**********************************************
+
+**Wahrscheinlichkeitsraum:** :math:`\Omega =\{\omega_1, \omega_2, \omega_3, ...\}`
+
+**Elementarereignisse:** :math:`\omega_1, \omega_2, \omega_3, ...`
+
+**Summe aller Elementarergeinissen:** :math:`\sum_{\omega_i\in \Omega} Pr[\omega_i] = 1`
+
+**Ereignis** :math:`E\subseteq\Omega`: :math:`Pr[E] = \sum_{\omega\in E} Pr[\omega]`
+
+`E` tritt ein, sobald ein Elementarereigniss eintritt.
+
+**komplementär Ereignis:** :math:`\bar E=\Omega-E`
+
+**Laplace Experiment:** :math:`Pr[E]=\frac{\vert E\vert}{\vert\Omega\vert}`
+
+**Eigenschaften:** Seien :math:`A,B \subseteq \Omega` Ereignisse.
+
+- :math:`Pr[\emptyset]=0`
+- :math:`Pr[\Omega]=1`
+- :math:`Pr[\bar A]=1-Pr[A]`
+- :math:`A\subseteq B \Rightarrow Pr[A] \le Pr[B]`
+
+**Additionssatz:** :math:`A_1, A_2, ...` paarweise disjunkt gilt:
+:math:`Pr[\bigcup_{i\ge 1}A_i]=\sum_{i\ge 1}Pr[A_i]`
+
+**Allgemeine Siebformel:**
+
+.. math::
+    :nowrap:
+
+    \begin{align*}
+    \vert A_1\cup A_2 \cup ... \cup A_n\vert = &\sum_{i=1}^n \vert A_i \vert \\
+    &- \sum_{1\le i < j \le n} \vert A_i \cap A_j \vert \\
+    &+ \sum_{1\le i<j<k \le n} \vert A_i \cap A_j \cap A_k \vert\\
+    &-+... \\
+    &+ (-1)^{n+1}\vert A_1 \cap ... \cap A_n \vert
+    \end{align*}
 
 
 .. rubric:: Fußnoten
