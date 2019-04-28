@@ -151,7 +151,7 @@ Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` paarweise disjunkt [#paarweisedis
 .. math:: Pr[A_i|B]=\frac{\Pr[A_i\cap B]}{Pr[B]}=\frac{Pr[B|A_i]*Pr[A_i]}{\sum_{i=1}^n Pr[B \cap A_i]*Pr[A_j]}
 
 
-**Hinweise:** Dadurch wird es möglich aus :math:`Pr[A|B]`, :math:`Pr[B|A]` zu berechnen. Dies is möglich, da das UND
+**Hinweise:** Dadurch wird es möglich aus :math:`Pr[A|B]`, :math:`Pr[B|A]` zu berechnen. Dies ist möglich, da das UND
 kommutativ ist.
 
 Beispiel: Datenübertragung über Kanal mit Fehlern (noisy)
@@ -316,7 +316,7 @@ Satz:
 
 Seien :math:`A_1, A_2, ...,A_n \subseteq \Omega`, dann gilt:
 
-:math:`A_1,A_2,...,A_n` sind unabhängig :math:`Rightarrow`
+:math:`A_1,A_2,...,A_n` sind unabhängig :math:`\Rightarrow`
 
 :math:`\forall s_1,s_2,...,s_n\in \{0,1\} Pr[A_1^{s_1} \cap A_2^{s_2} \cap,...,A_n^{s_n}]=Pr[A_1^{s_1}]*
 Pr[A_2^{s_2}]* Pr[A_2^{s_2}]*...*Pr[A_n^{s_n}]`
@@ -345,6 +345,68 @@ A, B, C unabh. :math:`\Rightarrow A\cap B, C` unabh. und :math:`A\cup B, C` unab
 .. todo::
 
     Beispiele + Anwendungen
+
+
+Zusammenfassung: Bedingte Wahrscheinlichkeit
+***********************************************
+
+:math:`A, B \subseteq \Omega`
+
+**Bedingte Wahrscheinlichkeit A gegeben B:**
+
+.. math::
+
+    Pr[A\mid B]=\frac{Pr[A\cap B]}{Pr[B]}
+
+**Sonderfälle:**
+
+1. :math:`A=B: \;\; Pr[B\mid B] =\frac{Pr[B\cap B]}{Pr[B]}=1`
+2. :math:`A \cap B=\emptyset : \;\; Pr[A\mid B] =\frac{Pr[\emptyset]}{Pr[B]}=0`
+3. :math:`B=\Omega : \;\; Pr[A\mid \Omega] =\frac{Pr[A \mid \Omega]}{Pr[\Omega]}=Pr[A]`
+
+**Multiplikationssatz:**
+
+Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` Ereignisse mit :math:`Pr[A_1\cap A_2\cap ... \cap A_n]>0`. Dann gilt:
+
+.. math::
+
+    Pr[A_1\cap A_2\cap ... \cap A_n]=Pr[A_1]*Pr[A_2\mid A_1] * Pr[A_3\mid A_1\cap A_2] * Pr[A_n\mid A_1\cap A_2\cap
+    ... \cap A_{n-1}]
+
+**Totale Wahrscheinlichkeit:**
+
+Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` paarweise disjunkt. Sei :math:`B \subseteq
+\Omega` mit :math:`B \subseteq A_1 \cup A_2\cup ...\cup A_n`, dann gilt:
+
+.. math:: Pr[B]=\sum_{i=1}^n Pr[B \mid A_i]*Pr[A_i]
+
+**Satz von Bayes:**
+
+Seien :math:`A_1,A_2,...,A_n \subseteq \Omega` paarweise disjunkt [#paarweisedisjunkt]_,
+:math:`B \subseteq A_1 \cup A_2\cup ...\cup A_n` und :math:`Pr[B]>0`, dann gilt:
+
+.. math:: Pr[A_i|B]=\frac{\Pr[A_i\cap B]}{Pr[B]}=\frac{Pr[B|A_i]*Pr[A_i]}{\sum_{i=1}^n Pr[B \cap A_i]*Pr[A_j]}
+
+
+**Unabhängigkeit:**
+
+2 Ereignisse:
+
+.. math:: Pr[A\cap B]=Pr[A]*Pr[B]
+
+n Ereignisse:
+
+.. math:: \forall I \subseteq [n] : Pr[\bigcap_{i\in I}A_i]=\prod_{i\in I}Pr[A_i]
+
+oder
+
+.. math::
+
+    \forall s_1,s_2,...,s_n\in \{0,1\} Pr[A_1^{s_1} \cap A_2^{s_2} \cap,...,A_n^{s_n}]=Pr[A_1^{s_1}]*
+    Pr[A_2^{s_2}]* Pr[A_2^{s_2}]*...*Pr[A_n^{s_n}]
+
+Erklärung: Alle möglichen Kombinationen werden betrachtet und müssen unabhängig sein.
+
 
 .. rubric:: Fußnoten
 
