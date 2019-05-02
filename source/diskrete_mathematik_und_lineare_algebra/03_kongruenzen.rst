@@ -331,3 +331,52 @@ folgt berechnet werden:
 
 .. math::
     x=(\sum_{i=1}^k a_i*(\frac{n}{n_i})_{\mod n_i}^{-1}*\frac{n}{n_i}) \mod n
+
+.. _03_th_09:
+
+Theorem 9: Eulersche :math:`\varphi`-Funktion
+**************************************************
+
+Die Eulersche :math:`\varphi`-Funktion ist:
+
+.. math:: \varphi(m) = \vert Z_m^*\vert
+
+Für `p` prim gilt:
+
+.. math:: \varphi(m)=m* \prod_{p\mid m}(1-\frac{1}{p})
+
+.. todo::
+
+    BSP.
+
+Theorem 10: Satz von Euler
+******************************
+
+Für alle :math:`n\ge 2` und alle :math:`a\in Z_m^*` ist:
+
+.. math:: a^{\varphi(n)} \equiv 1 \pmod{n}
+
+
+.. todo::
+
+    Beweis
+
+Folgerung 13:
+****************************
+
+Für alle Primzahlen `p` und :math:`a\in\{1,...,p\}` gilt:
+
+.. math:: a^{p-1}\equiv 1 \pmod{p},
+
+da nach :ref:`Theorem 9 <03_th_09>`: :math:`\varphi(p)=p-1`
+
+Theorem 11: Kleiner Satz von Fermat
+****************************************
+
+Für eine Primzahl `p` und eine beliebige ganze Zahl `a` gilt:
+
+.. math:: a^p\equiv a\pmod{p}
+
+.. todo::
+
+    RSA
